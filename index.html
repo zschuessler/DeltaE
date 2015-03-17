@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Delta E by zschuessler</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Delta E</h1>
+        <h2>CIE color difference formulas in JavaScript</h2>
+        <a href="https://github.com/zschuessler/DeltaE" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="deltae---fun-with-color-difference-formulas" class="anchor" href="#deltae---fun-with-color-difference-formulas" aria-hidden="true"><span class="octicon octicon-link"></span></a>DeltaE - Fun With Color Difference Formulas!</h1>
+
+<p>This repository will be updated with more information (and a demo!)
+once a tutorial goes live on Smashing Magazine.</p>
+
+<h2>
+<a id="about-delta-e" class="anchor" href="#about-delta-e" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Delta E</h2>
+
+<p>tl;dr - an organization created a way to quantify difference in CIELAB color space. And now you too can quantify color... in JavaScript!</p>
+
+<p>More: <a href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></p>
+
+<h2>
+<a id="get-started" class="anchor" href="#get-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Started</h2>
+
+<p>Install via npm</p>
+
+<pre><code>npm install --save delta-e
+</code></pre>
+
+<h3>
+<a id="use-it" class="anchor" href="#use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use It</h3>
+
+<p>A quick and dirty guide to using each of the three formulas:</p>
+
+<pre><code>// Include library
+var DeltaE = require('delta-e');
+
+// Let's create two test LAB color objects to compare!
+var color1 = {L: 36, A: 60, B: 41};
+var color2 = {L: 100, A: 40, B: 90};
+
+// 1976 formula
+console.log(DeltaE.getDeltaE76(color1, color2));
+
+// 1994 formula
+console.log(DeltaE.getDeltaE94(color1, color2));
+
+// 2000 formula
+console.log(DeltaE.getDeltaE00(color1, color2));
+</code></pre>
+
+<h3>
+<a id="-but-what-does-it-mean-and-why-do-i-care" class="anchor" href="#-but-what-does-it-mean-and-why-do-i-care" aria-hidden="true"><span class="octicon octicon-link"></span></a>... But What Does it Mean? And Why Do I Care?</h3>
+
+<p>Wait for the Smashing Magazine to publish, pardner.</p>
+
+<h2>
+<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h2>
+
+<p>This is Unlicensed. Do what you want. Just don't sue me, and we is cool.</p>
+
+<blockquote>
+<p>This is free and unencumbered software released into the public domain.</p>
+
+<p>Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.</p>
+
+<p>In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.</p>
+
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.</p>
+
+<p>For more information, please refer to <a href="http://unlicense.org">http://unlicense.org</a></p>
+</blockquote>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/zschuessler/DeltaE/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/zschuessler/DeltaE/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/zschuessler/DeltaE"></a> is maintained by <a href="https://github.com/zschuessler">zschuessler</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+            <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-1029597-19");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
