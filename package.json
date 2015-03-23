@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "CIE color difference algorithms in JavaScript.",
   "private": false,
+  "main": "./src/index.js",
   "keywords": [
     "cie",
     "cie94",
@@ -29,11 +30,17 @@
     "url": "https://github.com/zschuessler/DeltaE.git"
   },
   "devDependencies": {
-    "gulp": "^3.8.8",
+    "browserify": "^9.0.3",
+    "gulp": "^3.8.11",
     "gulp-browserify": "^0.5.0",
+    "gulp-concat": "^2.5.2",
     "gulp-jshint": "^1.8.5",
     "gulp-rename": "^1.2.0",
-    "gulp-uglify": "^1.0.1",
-    "gulp-wrap-umd": "^0.2.1"
+    "gulp-sourcemaps": "^1.5.1",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.1.0",
+    "gulp-wrap-exports": "^0.3.0",
+    "gulp-wrap-umd": "^0.2.1",
+    "vinyl-source-stream": "^1.1.0"
   }
 }

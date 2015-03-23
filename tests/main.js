@@ -1,5 +1,5 @@
 var assert = require('assert');
-var DeltaE = require('../index');
+var DeltaE = require('../src/index');
 
 /**
  * Simple Mocha tests to verify dE values for each formula.
