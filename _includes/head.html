@@ -28,7 +28,7 @@
 	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.css">
 	<script src="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.1.1/katex.min.js"></script>
 	{% endif %}
-        <script src="/js/jquery-2.1.3.min.js"></script>
+        <script src="{{ "/js/jquery-2.1.3.min.js" | prepend: site.baseurl }}"></script>
 	<!-- Google Analytics -->
 	{% if site.theme.google_analytics %}
 	<script>
