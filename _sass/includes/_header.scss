@@ -7,6 +7,7 @@
   width: 100%;
   position: fixed;
   padding: 10px;
+  z-index: 10;
   
   @media (max-width: 650px) {
       position: relative;

@@ -14,17 +14,17 @@ layout: default
         </p>
         <p>
             <a href="https://github.com/{{ site.theme.github }}" title="{{ site.theme.str_follow_on }} GitHub" class="btn-callout">
-		<i class="fa fa-fw fa-github"></i> Get it on Github
+                <i class="fa fa-fw fa-github"></i> Get it on Github
             </a>
         </p>
         <p>
             <a href="#quickstart" class="btn-callout">
-		<i class="fa fa-fw fa-fighter-jet"></i> Quick-Start Guide
+                <i class="fa fa-fw fa-fighter-jet"></i> Quick-Start Guide
             </a>
         </p>
         <p>
             <a href="/learn" class="btn-callout">
-		<i class="fa fa-fw fa-book"></i> Overly-Verbose Delta-E Guide
+                <i class="fa fa-fw fa-book"></i> Overly-Verbose Delta-E Guide
             </a>
         </p>
     </div>
@@ -49,9 +49,17 @@ layout: default
 
             <!-- Use It -->
             <h2>Use It</h2>
-            {% highlight js %}npm install --save delta-e{% endhighlight %}
-            <h4>Usage</h4>
-            {% highlight js %}
+            <ul class="tabs-menu">
+                <li class="current"><a href="#tab-1">npm</a></li>
+                <li><a href="#tab-2">Bower</a></li>
+            </ul>
+            <div class="tab">
+                <!-- Tab 1 -->
+                <div id="tab-1" class="tab-content">
+                    <h4>Install</h4>
+                    {% highlight js %}npm install --save delta-e{% endhighlight %}
+                    <h4>Usage</h4>
+                        {% highlight js %}
 // Include library
 var DeltaE = require('delta-e');
 
@@ -67,7 +75,23 @@ DeltaE.getDeltaE94(color1, color2);
 
 // 2000 formula
 DeltaE.getDeltaE00(color1, color2);
-            {% endhighlight %}
+                        {% endhighlight %}
+                </div>
+                
+                <!-- Tab 2 -->
+                <div id="tab-2" class="tab-content">
+                    <h4>Install</h4>
+                    {% highlight js %}bower install --save delta-e{% endhighlight %}
+                    <h4>Usage</h4>
+                        {% highlight js %}
+// Include library
+<script src="bower_components/delta-e/src/deltae.bower.min.js"></script>
+
+// Use it with DeltaE global
+console.log(DeltaE);
+                        {% endhighlight %}
+                </div>
+            </div>
         </section>
 
         <h2>Deep Learning // Demos</h2>
@@ -79,7 +103,7 @@ DeltaE.getDeltaE00(color1, color2);
                 <i class="fa fa-fw fa-book"></i> Overly-Verbose Delta-E Guide
             </a>
         </p>
-        
+
         <h2>License</h2>
         <p>
             This project is <em>unlicensed</em> - do what you want.
@@ -93,3 +117,16 @@ DeltaE.getDeltaE00(color1, color2);
         </p>
     </article>
 </div>
+
+<script>
+$(document).ready(function () {
+    $(".tabs-menu a").click(function (event) {
+        event.preventDefault();
+        $(this).parent().addClass("current");
+        $(this).parent().siblings().removeClass("current");
+        var tab = $(this).attr("href");
+        $(".tab-content").not(tab).css("display", "none");
+        $(tab).fadeIn();
+    });
+});
+</script>
