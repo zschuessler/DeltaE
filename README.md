@@ -1,26 +1,34 @@
-# DeltaE - Fun With Color Difference Formulas!
+# DeltaE - Quantify Color Difference
 
-This repository will be updated with more information (and a demo!)
-once a tutorial goes live on Smashing Magazine.
+Check out the following GitHub Pages respository for information on this library.
+
+http://zschuessler.github.io/DeltaE/
 
 ## About Delta E
 
-tl;dr - an organization created a way to quantify difference in CIELAB color space. And now you too can quantify color... in JavaScript!
+This package gives access to three color difference algorithms. 
+These algorithms represent the hard work of the [International Commission on Illumination (CIE).](http://www.cie.co.at/)
 
-More: http://en.wikipedia.org/wiki/Color_difference
 
-## Get Started
-Install via npm
-
-    npm install --save delta-e
+Historically, each iterative algorithm has been used in print
+and textile industries to maintain consistency in machine calibration.
+These days, far more interesting use cases arise with media processing.
     
+## Install It
+
+DeltaE comes in flavors of npm and Bower.
+
+    // install via npm
+    npm install delta-e
+
+    // install via Bower
+    bower install delta-e
+
 ### Use It
-A quick and dirty guide to using each of the three formulas:
-
-    // Include library
+#### npm
     var DeltaE = require('delta-e');
-    
-    // Let's create two test LAB color objects to compare!
+
+     // Create two test LAB color objects to compare!
     var color1 = {L: 36, A: 60, B: 41};
     var color2 = {L: 100, A: 40, B: 90};
     
@@ -33,10 +41,14 @@ A quick and dirty guide to using each of the three formulas:
     // 2000 formula
     console.log(DeltaE.getDeltaE00(color1, color2));
 
+#### Bower
+    // Include library
+    <script src="bower_components/delta-e/src/deltae.bower.min.js"></script>
 
-### ... But What Does it Mean? And Why Do I Care?
+    // You now have a DeltaE global
+    console.log(DeltaE);
 
-Wait for the Smashing Magazine to publish, pardner.
+
 
 ## Licensing
 
