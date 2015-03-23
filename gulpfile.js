@@ -6,12 +6,12 @@ var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
 
 gulp.task('default', function() {
-   return browserify('./src/index.js')
+   return browserify('./src/index.js',{
+            standalone: 'DeltaE'
+        })
         .bundle()
         //Pass desired output filename to vinyl-source-stream
         .pipe(source('deltae.bower.min.js'))
-        // globalify
-        .pipe(streamify(wrap({ name: 'DeltaE' })))
         // Start piping stream to tasks!
         .pipe(gulp.dest('./src/'));
 });
