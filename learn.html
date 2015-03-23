@@ -1,0 +1,324 @@
+---
+layout: page
+title: Learn
+permalink: /learn/
+---
+
+<h1 class="title">Delta E 101</h1>
+
+<!-- Intro -->
+<h2>Introduction</h2>
+<p>
+    How do you put a number to <em>perceived</em> difference in color?
+</p>
+<p>
+    No doubt a fun question to think about, but a more serious topic for print
+    and textile business that require color consistency.
+</p>
+<p>
+    The <a href="http://www.cie.co.at/index.php/LEFTMENUE/About+us">International Commission on Illumination</a>
+    (<em>CIE</em>) formed in the early 1900s to standardize the fields of
+    colorimetry, photometry, and imaging. The commission addressed the 
+    topic of color difference in 1976, introducing the world to the concept
+    of Delta E.
+</p>
+<p>
+    In this guide we will take a look at three of the Delta E algorithms
+    produced: dE76, dE94, and dE00.
+</p>
+
+<!-- Define Delta E -->
+<h2>Defining Delta E</h2>
+<p>
+    ΔE - (<em>Delta E, dE</em>) The measure of change in visual perception of two given colors.
+</p>
+<p>
+    Delta E is a metric for understanding how the human eye perceives color 
+    difference. The term <em>delta</em> comes from mathematics, meaning change in 
+    a variable or function. The suffix <em>E</em> references the German word 
+    <em>Empfindung</em>, which broadly means sensation.
+</p>
+<p>
+    On a typical scale, the Delta E value will range from 0 to 100.
+</p>
+<table>
+    <tbody>
+        <tr>		
+            <th>Delta E</th>
+            <th>Perception</th>
+        </tr>
+        <tr>		
+            <td><= 1.0</td>
+            <td>Not perceptible by human eyes.</td>
+        </tr>
+        <tr>	
+            <td>1 - 2</td>
+            <td>Perceptible through close observation.</td>	
+        </tr>
+        <tr>		
+            <td>2 - 10</td>
+            <td>Perceptible at a glance.</td>
+        </tr>
+        <tr>		
+            <td>11 - 49</td>
+            <td>Colors are more similar than opposite</td>
+        </tr>
+        <tr>		
+            <td>100</td>
+            <td>Colors are exact opposite</td>
+        </tr>
+    </tbody>
+</table>
+<p>
+    Take the table as a general guide; it’s possible to get a Delta E
+    value below 1.0 for two colors that appear different. This is 
+    the case with CIE76 and CIE94 formulas, in which saturation is
+    either not considered or not weighted properly.
+</p>
+<p>
+    Because of inconsistencies between the three algorithms, the 
+    exact meaning of Delta E changes slightly depending on which
+    formula is used. Think of Delta E less as a definitive answer, 
+    and instead a helpful metric to apply to a specific use case.
+</p>
+
+<!-- Delta E 76 -->
+<h3>Delta E 76</h3>
+<p>
+    If you were asked to write a formula to quantify perceived color difference,
+    how would you do it?
+</p>
+<p>
+    One logical approach would be find a color matrix that is grouped on perceived
+    color, and very simply measuring the distance between the two points in 3D space.
+    Only one problem stands in your way: before 1976, this color space didn't exist!
+</p>
+<p>
+    CIE gave two gifts in 1976: the CIELAB color space, and the first Delta E formula.
+</p>
+<figure>
+    <img src="/img/formula-cie76.png" alt="CIE76 color difference formula" title="CIE76 color difference formula" />
+    <figcaption>The first-ever Delta E</figcaption>
+</figure>	
+<p>
+    Look familiar? Indeed, you're looking at a ripoff of the <a href="http://en.wikipedia.org/wiki/Euclidean_distance">Euclidean Distance</a>
+    formula. This makes sense, as CIELAB color space was created as a 3D
+    matrix of color points. Directly measuring distance should work, right?
+</p>
+<figure>
+    <img src="/img/lab-space.png" alt="LAB color space distance example" title="LAB color space distance example" />
+    <figcaption>Two points in LAB color space</figcaption>
+</figure>	
+<p>
+    Alas, issues are afoot. The premise that LAB color space is
+    perfect in perceptual uniformity falls short, particularly with 
+    differences in saturation. The example above demonstrates that 
+    for hues in the same lightness it works well. But what happens
+    when we have two saturated colors of different hues?
+</p>
+<figure>
+    <img src="/img/lab-space-2.png" alt="LAB color space distance comparison example" title="LAB color space distance comparison example" />
+    <figcaption>Two very different hues, highly saturated</figcaption>
+</figure>	
+<figure>
+    <img src="/img/lab-swatch-comparison.png" alt="LAB color swatch comparison" title="LAB color swatch comparison" />
+    <figcaption>
+        A closer comparison of the two colors above. Are they similar?
+        <br/>
+        ...indeed - they appear to be!
+    </figcaption>
+</figure>	
+<p>
+    The two above blocks represent the dark blue and dark red as 
+    graphed. CIE76 reports this difference as ΔE 20 (<em>somewhat similar</em>),
+    when by definition difference should fall in the ΔE~1-3 range
+    (<em>perceptible with close observation</em>).
+</p>
+<p>
+    Clearly saturation is a major problem for dE76. In the below 
+    example, blue highlights pixels that each algorithm has
+    determined as 25% within tolerance of pure saturation (black).
+</p>
+<figure>
+    <img src="/img/cie-image-comparison.jpg" alt="CIE formula comparison" title="CIE formula comparison" />
+    <figcaption>
+        dE76 performs poorly with high saturation comparisons.
+    </figcaption>
+</figure>
+<p>
+    Delta E can mean different things for a given use case. Here, 
+    if we wanted to come closer to matching all black color in CIE76,
+    we would pad the Delta E number more. (<em>Note this lends to
+        more error, as tolerance increases.</em>)
+</p>
+<p>
+    So when do we still use CIE76? The formula has the major advantage
+    of being a simple Euclidean Distance calculation: it’s faster 
+    than the successive CIE formulas. It’s used in 
+    performance-intensive situations that don’t require high 
+    accuracy. Image processing and real-time post processing 
+    of media is an example of where CIE76 would suffice.
+</p>
+<p>
+    With such an obvious flaw around saturation, CIE continued in the laudable quest for accuracy.
+</p>
+
+<!-- Delta E 94 -->
+<h3>Delta E 94</h3>
+<p>
+    In 1994, the original Delta E formula was improved. The new 
+    formula would take into account certain weighting factors for
+    each lightness, chroma, and hue value. It also introduced the 
+    ability to add a modifier according to the use case: either
+    textile, or graphic arts.
+</p>
+<p>
+    Gone are the days of simplicity:
+</p>
+<figure>
+    <img src="/img/formula-cie94.png" alt="CIE 94 formula" title="CIE 94 formula" />
+    <figcaption>
+        dE76 Formula
+    </figcaption>
+</figure>
+
+<p>
+    CIE94 introduced a conversion of the given Lab value into
+    CIE L*C*h (Lch). The two color models differ in that Lch 
+    represents hue as an angle instead of infinite points of color.
+    This allows us to more easily troubleshoot and perform 
+    calculations on hue.
+</p>
+<figure>
+    <img src="/img/lab-lch-comparison.png" alt="LAB LCH color space comparison" title="LAB LCH color space comparison" />
+    <figcaption>
+        Lab groups hue on 4 color axes; Lch on angle
+    </figcaption>
+</figure>
+<p>
+    CIE94 surely outshines CIE76, but it’s no gold. The CIE94 still
+    falls short when calculating the perceived lightness of two colors.
+</p>
+<figure>
+    <img src="/img/hue-comparison.png" alt="LAB hue comparison" title="LAB hue comparison" />
+    <figcaption>
+        Hue is not similar, but the lightness is.
+    </figcaption>
+</figure>
+<p>
+    Given the two colors above, we can agree that the two are much 
+    different in hue, but similar in overall lightness. CIE94
+    calculates ΔE 128 (<em>polar opposites</em>), while CIE2000 more
+    correctly calculates ΔE 49.4 (<em>middle of the road</em>).
+</p>
+<p>
+    CIE94 is very much Baby Bear in Goldilocks lore: It’s a middle of
+    the road formula where accuracy is necessary but not mission-critical. 
+    It’s still often used in textiles and printing applications today.
+</p>
+
+<!-- CIE2000 -->
+<h3>Delta E 2000</h3>
+<p>
+    The CIE organization decided to fix the lightness inaccuracies
+    by introducing dE00. It’s currently the most complicated, 
+    yet most accurate, CIE color difference algorithm available.
+</p>
+<figure>
+    <img src="/img/formula-cie00.png" alt="CIE00 formula" title="CIE00 formula" />
+    <figcaption>
+        dE00 Formula
+    </figcaption>
+</figure>
+<p>
+    All this busy work gets us a more accurate lightness calculation.
+    We can see the difference in saturation weighting below. 
+    This graph compares dE94 and dE00 in posing the question,
+    "Is pure green more similar to white or black?"
+</p>
+<figure>
+    <img src="/img/cie-formula-graph.png" alt="CIE00 CIE94 accuracy graph" title="CIE00 CIE94 accuracy graph" />
+    <figcaption>
+        dE00 correctly changes as lightness changes. dE94 - not so much.
+    </figcaption>
+</figure>
+<p>
+    Bravo for dE00, which maintains the correct weighting as 
+    lightness fades from black to white. The formula concludes color
+    difference between green/black and green/white is moderate.
+</p>
+<p>
+    dE94 incorrectly concludes that black/green has roughly the same
+    color difference as white/green. It’s almost as if it couldn't 
+    weight saturation properly!
+</p>
+<figure>
+    <img src="/img/cie-swatch-comparison.png" alt="CIE00 CIE94 swatch comparison" title="CIE00 CIE94 swatch comparison" />
+    <figcaption>
+        dE94 made a mistake here - wouldn't you say?
+    </figcaption>
+</figure>
+<p>
+    Although the most accurate we have today, dE00 is not without 
+    fault. The most significant discontinuity occurs when compared
+    hues are 180° from each other (forcing a hue shift in the calculation). 
+    According to a <a href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">Rochester CIE2000 Analysis paper</a>,
+    this could create a discontinuity of ΔE 0.2734. For all but the
+    most high accuracy use cases, this is negligible.
+</p>
+<p>
+    Remember: Delta E accuracy must be confirmed through the very 
+    tool it was meant to remove subjectivity from - 
+    <em>a pair of human eyes.</em>
+</p>
+
+<h3>References</h3>
+<ol>
+    <li>
+        (2014). Retrieved from http://www.cie.co.at/
+    </li>
+    <li>
+        Sharma, G. (2004). The CIEDE2000 Color-Difference Formula: 
+        Implementation Notes, Supplementary Test Data, and Mathematical 
+        Observations. Retrieved from 
+        <a href="http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf">
+            http://www.ece.rochester.edu/~gsharma/ciede2000/ciede2000noteCRNA.pdf
+        </a>
+    </li>
+    <li>
+        Color Differences & Tolerances: Commercial Color Acceptability. 
+        (2013, January 1). Retrieved from 
+        <a href="http://industrial.datacolor.com/support/wp-content/uploads/2013/01/Color-Differences-Tolerances.pdf">
+            http://industrial.datacolor.com/support/wp-content/uploads/2013/01/Color-Differences-Tolerances.pdf
+        </a>
+    </li>
+    <li>
+        Brainard, D. (2003). Color Appearance and Color Difference Specification.
+        In The Science of Color (pp. 192 - 213). Elsevier.
+    </li>
+</ol>
+
+<script src="/js/jquery-2.1.3.min.js"></script>
+<script src="/js/toc.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // init toc
+        var $toc = $('.post-content_toc').toc({
+            container: '.post-content'
+        });
+        
+        // show toc only after title is in view
+        var triggerOffset = $('.post-content').offset().top;
+        var currentOffset;
+        $(window).bind("scroll", function() {
+            currentOffset = $(this).scrollTop();
+
+            if (currentOffset >= triggerOffset && $toc.is(":hidden")) {
+                $toc.fadeIn();
+            }
+            else if (currentOffset < triggerOffset) {
+                $toc.fadeOut();
+            }
+        });
+    });
+</script>

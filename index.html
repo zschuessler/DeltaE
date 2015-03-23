@@ -1,62 +1,58 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Delta E by zschuessler</title>
+---
+layout: default
+---
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <script src="javascripts/scale.fix.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1 class="header">Delta E</h1>
-        <p class="header">CIE color difference formulas in JavaScript</p>
+<div class="home">
+    <!-- Callout -->
+    <div class="call-out">
+        <h1>Finally, Quantifying Color Difference is Fun Again</h1>
+        <p>
+            Delta E lets you quantify color difference... in JavaScript.
+        </p>
+        <p>
+            It's <em>unlicensed</em> and <em>easy to use</em>.
+        </p>
+        <p>
+            <a href="https://github.com/{{ site.theme.github }}" title="{{ site.theme.str_follow_on }} GitHub" class="btn-callout">
+		<i class="fa fa-fw fa-github"></i> Get it on Github
+            </a>
+        </p>
+        <p>
+            <a href="#quickstart" class="btn-callout">
+		<i class="fa fa-fw fa-fighter-jet"></i> Quick-Start Guide
+            </a>
+        </p>
+        <p>
+            <a href="/learn" class="btn-callout">
+		<i class="fa fa-fw fa-book"></i> Overly-Verbose Delta-E Guide
+            </a>
+        </p>
+    </div>
 
-        <ul>
-          <li class="download"><a class="buttons" href="https://github.com/zschuessler/DeltaE/zipball/master">Download ZIP</a></li>
-          <li class="download"><a class="buttons" href="https://github.com/zschuessler/DeltaE/tarball/master">Download TAR</a></li>
-          <li><a class="buttons github" href="https://github.com/zschuessler/DeltaE">View On GitHub</a></li>
-        </ul>
+    <article>
+        <header>
+            <h1 class="title" id="quickstart">QuickStart // Summary</h1>
+        </header>
+        <section class="post-content">
+            <p>
+                This package gives access to three color difference algorithms. 
+                These algorithms represent the hard work of the
+                <a href="http://www.cie.co.at/" title="International Commission on Illumination">
+                    International Commission on Illumination (CIE).
+                </a>
+            </p>
+            <p>
+                Historically, each iterative algorithm has been used in print
+                and textile industries to maintain consistency in machine calibration.
+                These days, far more interesting use cases arise with media processing.
+            </p>
 
-        <p class="header">This project is maintained by <a class="header name" href="https://github.com/zschuessler">zschuessler</a></p>
-
-
-      </header>
-      <section>
-        <h1>
-<a id="deltae---fun-with-color-difference-formulas" class="anchor" href="#deltae---fun-with-color-difference-formulas" aria-hidden="true"><span class="octicon octicon-link"></span></a>DeltaE - Fun With Color Difference Formulas!</h1>
-
-<p>This repository will be updated with more information (and a demo!)
-once a tutorial goes live on Smashing Magazine.</p>
-
-<h2>
-<a id="about-delta-e" class="anchor" href="#about-delta-e" aria-hidden="true"><span class="octicon octicon-link"></span></a>About Delta E</h2>
-
-<p>tl;dr - an organization created a way to quantify difference in CIELAB color space. And now you too can quantify color... in JavaScript!</p>
-
-<p>More: <a href="http://en.wikipedia.org/wiki/Color_difference">http://en.wikipedia.org/wiki/Color_difference</a></p>
-
-<h2>
-<a id="get-started" class="anchor" href="#get-started" aria-hidden="true"><span class="octicon octicon-link"></span></a>Get Started</h2>
-
-<p>Install via npm</p>
-
-<pre><code>npm install --save delta-e
-</code></pre>
-
-<h3>
-<a id="use-it" class="anchor" href="#use-it" aria-hidden="true"><span class="octicon octicon-link"></span></a>Use It</h3>
-
-<p>A quick and dirty guide to using each of the three formulas:</p>
-
-<pre><code>// Include library
+            <!-- Use It -->
+            <h2>Use It</h2>
+            {% highlight js %}npm install --save delta-e{% endhighlight %}
+            <h4>Usage</h4>
+            {% highlight js %}
+// Include library
 var DeltaE = require('delta-e');
 
 // Let's create two test LAB color objects to compare!
@@ -64,67 +60,36 @@ var color1 = {L: 36, A: 60, B: 41};
 var color2 = {L: 100, A: 40, B: 90};
 
 // 1976 formula
-console.log(DeltaE.getDeltaE76(color1, color2));
+DeltaE.getDeltaE76(color1, color2);
 
 // 1994 formula
-console.log(DeltaE.getDeltaE94(color1, color2));
+DeltaE.getDeltaE94(color1, color2);
 
 // 2000 formula
-console.log(DeltaE.getDeltaE00(color1, color2));
-</code></pre>
+DeltaE.getDeltaE00(color1, color2);
+            {% endhighlight %}
+        </section>
 
-<h3>
-<a id="-but-what-does-it-mean-and-why-do-i-care" class="anchor" href="#-but-what-does-it-mean-and-why-do-i-care" aria-hidden="true"><span class="octicon octicon-link"></span></a>... But What Does it Mean? And Why Do I Care?</h3>
-
-<p>Wait for the Smashing Magazine to publish, pardner.</p>
-
-<h2>
-<a id="licensing" class="anchor" href="#licensing" aria-hidden="true"><span class="octicon octicon-link"></span></a>Licensing</h2>
-
-<p>This is Unlicensed. Do what you want. Just don't sue me, and we is cool.</p>
-
-<blockquote>
-<p>This is free and unencumbered software released into the public domain.</p>
-
-<p>Anyone is free to copy, modify, publish, use, compile, sell, or
-distribute this software, either in source code form or as a compiled
-binary, for any purpose, commercial or non-commercial, and by any
-means.</p>
-
-<p>In jurisdictions that recognize copyright laws, the author or authors
-of this software dedicate any and all copyright interest in the
-software to the public domain. We make this dedication for the benefit
-of the public at large and to the detriment of our heirs and
-successors. We intend this dedication to be an overt act of
-relinquishment in perpetuity of all present and future rights to this
-software under copyright law.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
-MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
-IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
-OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
-ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.</p>
-
-<p>For more information, please refer to <a href="http://unlicense.org">http://unlicense.org</a></p>
-</blockquote>
-      </section>
-      <footer>
-        <p><small>Hosted on <a href="https://pages.github.com">GitHub Pages</a> using the Dinky theme</small></p>
-      </footer>
-    </div>
-    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-		          <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("UA-1029597-19");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
-
-  </body>
-</html>
+        <h2>Deep Learning // Demos</h2>
+        <p>
+            <em>The best 30 minutes you'll spend today.</em>
+        </p>
+        <p>
+            <a href="/learn" class="btn-callout_inverse">
+                <i class="fa fa-fw fa-book"></i> Overly-Verbose Delta-E Guide
+            </a>
+        </p>
+        
+        <h2>License</h2>
+        <p>
+            This project is <em>unlicensed</em> - do what you want.
+        </p>
+        <p>
+            Did this library burn your house down? Too bad - the only stipulation
+            is that you don't sue me. Use at your own risk.
+        </p>
+        <p>
+            Did you make something cool? Shoot me an email, I'll link to it :-)
+        </p>
+    </article>
+</div>
