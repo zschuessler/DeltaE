@@ -57,6 +57,7 @@ paginate_path: "blog/page:num"
 # BUILD SETTINGS
 markdown: kramdown
 highlighter: pygments
+source: _site
 sass:
   sass_dir: _sass
   style: :compressed
