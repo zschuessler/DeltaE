@@ -43,6 +43,4 @@ dE76.prototype.getDeltaE = function() {
     );
 };
 
-if (module && module.exports) {
-    module.exports = dE76;
-}
+module.exports = dE76;

@@ -121,6 +121,4 @@ dE94.prototype.calculateB = function(x1, x2) {
     return hab / sh;
 };
 
-if (module && module.exports) {
-    module.exports = dE94;
-}
+module.exports = dE94;
