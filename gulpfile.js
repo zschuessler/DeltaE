@@ -4,14 +4,27 @@ var source = require('vinyl-source-stream');
 var wrap = require('gulp-wrap-exports');
 var streamify = require('gulp-streamify');
 var uglify = require('gulp-uglify');
+var buffer = require('vinyl-buffer');
+var jsdoc = require('gulp-jsdoc');
 
-gulp.task('default', function() {
-   return browserify('./src/index.js',{
+// Build all distribution files from source
+gulp.task('build', function() {
+    // global export version
+   browserify('./src/index.js',{
             standalone: 'DeltaE'
         })
         .bundle()
-        //Pass desired output filename to vinyl-source-stream
-        .pipe(source('deltae.bower.min.js'))
-        // Start piping stream to tasks!
-        .pipe(gulp.dest('./src/'));
+        .pipe(source('deltae.global.min.js'))
+        .pipe(buffer())
+        .pipe(uglify())
+        .pipe(gulp.dest('./dist/'));
+});
+
+// Generate JSDocs
+gulp.task('jsdoc', function() {
+    gulp
+        .src(['./src/*.js', './README.md'])
+        .pipe(jsdoc('./jsdoc', {
+            path: 'ink-docstrap'
+        }));
 });

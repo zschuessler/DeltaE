@@ -1,5 +1,10 @@
 var assert = require('assert');
-var DeltaE = require('../src/index');
+var DeltaE_GlobalClass = require('../dist/deltae.global.min');
+var DeltaE_CommonJSClass = require('../src/index');
+
+var DeltaE_Global = new DeltaE_GlobalClass();
+var DeltaE_CommonJS = new DeltaE_CommonJSClass();
+
 
 /**
  * Simple Mocha tests to verify dE values for each formula.
@@ -29,10 +34,12 @@ describe('deltaE', function() {
          * http://colormine.org/delta-e-calculator
          */
         it('Return correct DeltaE', function(done) {
-            var result = DeltaE.getDeltaE76(color1, color2);
+            var resultGlobal = DeltaE_Global.getDeltaE76(color1, color2);
+            var resultCommonJS = DeltaE_CommonJS.getDeltaE76(color1, color2);
             var correctDeltaE = 41.14608122288197;
-
-            assert.equal(result, correctDeltaE);
+            
+            assert.equal(resultCommonJS, correctDeltaE);
+            assert.equal(resultGlobal, correctDeltaE);
             done();
         });
     });
@@ -45,10 +52,12 @@ describe('deltaE', function() {
          * http://colormine.org/delta-e-calculator/cie94
          */
         it('Return correct DeltaE', function(done) {
-            var result = DeltaE.getDeltaE94(color1, color2);
+            var resultGlobal = DeltaE_Global.getDeltaE94(color1, color2);
+            var resultCommonJS = DeltaE_CommonJS.getDeltaE94(color1, color2);
             var correctDeltaE = 22.849281934529994;
 
-            assert.equal(result, correctDeltaE);
+            assert.equal(resultCommonJS, correctDeltaE);
+            assert.equal(resultGlobal, correctDeltaE);
             done();
         });
     });
@@ -61,10 +70,12 @@ describe('deltaE', function() {
          * http://colormine.org/delta-e-calculator/cie2000
          */
         it('Return correct DeltaE', function(done) {
-            var result = DeltaE.getDeltaE00(color1, color2);
+            var resultGlobal = DeltaE_Global.getDeltaE00(color1, color2);
+            var resultCommonJS = DeltaE_CommonJS.getDeltaE00(color1, color2);
             var correctDeltaE = 22.394506952417895;
 
-            assert.equal(result, correctDeltaE);
+            assert.equal(resultCommonJS, correctDeltaE);
+            assert.equal(resultGlobal, correctDeltaE);
             done();
         });
     });

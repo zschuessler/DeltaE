@@ -1,12 +1,12 @@
 {
   "name": "delta-e",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "homepage": "https://github.com/zschuessler/DeltaE",
   "authors": [
     "Zachary Schuessler <zlschuessler@gmail.com>"
   ],
   "description": "Color difference algorithms..in JavaScript",
-  "main": "src/deltae.bower.min.js",
+  "main": "dist/deltae.global.min.js",
   "moduleType": [
     "globals"
   ],

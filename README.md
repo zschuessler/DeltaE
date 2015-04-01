@@ -43,7 +43,7 @@ DeltaE comes in flavors of npm and Bower.
 
 #### Bower
     // Include library
-    <script src="bower_components/delta-e/src/deltae.bower.min.js"></script>
+    <script src="bower_components/delta-e/dist/deltae.global.min.js"></script>
 
     // You now have a DeltaE global
     console.log(DeltaE);
