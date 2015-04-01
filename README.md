@@ -27,7 +27,8 @@ DeltaE comes in flavors of npm and Bower.
 ### Use It
     // For npm: use require
     var DeltaE = require('delta-e');
-    // For Bower: include the distribution script
+
+    // For Bower: include the script. DeltaE global now accessible.
     <script src="bower_components/delta-e/dist/deltae.global.min.js"></script>
 
     // Create two test LAB color objects to compare!
