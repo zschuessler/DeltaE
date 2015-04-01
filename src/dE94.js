@@ -6,6 +6,7 @@
  * The CIE94 algorithm: an iteration of the CIE76 algorithm.
  * http://en.wikipedia.org/wiki/Color_difference#CIE94
  * @constructs dE94
+ * @memberOf DeltaE
  * @property {object} x1 The LAB color configuration object.
  * @property {number} x1.L The lightness value, on scale of 0-100.
  * @property {number} x1.A The chroma value, on scale of -128 to 128.
