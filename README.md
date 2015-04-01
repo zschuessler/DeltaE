@@ -25,10 +25,12 @@ DeltaE comes in flavors of npm and Bower.
     bower install delta-e
 
 ### Use It
-#### npm
+    // For npm: use require
     var DeltaE = require('delta-e');
+    // For Bower: include the distribution script
+    <script src="bower_components/delta-e/dist/deltae.global.min.js"></script>
 
-     // Create two test LAB color objects to compare!
+    // Create two test LAB color objects to compare!
     var color1 = {L: 36, A: 60, B: 41};
     var color2 = {L: 100, A: 40, B: 90};
     
@@ -41,14 +43,27 @@ DeltaE comes in flavors of npm and Bower.
     // 2000 formula
     console.log(DeltaE.getDeltaE00(color1, color2));
 
-#### Bower
-    // Include library
-    <script src="bower_components/delta-e/dist/deltae.global.min.js"></script>
+## Tests
 
-    // You now have a DeltaE global
-    console.log(DeltaE);
+A simple Mocha test is setup to test the accuracy of each dE algorithm, for both
+npm and Bower versions.
 
+    $ cd tests/
+    $ mocha main.js
 
+## Gulp Tasks
+
+### build
+
+Builds both the Bower and npm version from source.
+
+    $ gulp build
+
+### jsdoc
+
+Generates full documentation in the /jsdoc/ folder.
+
+    $ gulp jsdoc
 
 ## Licensing
 

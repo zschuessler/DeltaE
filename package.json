@@ -1,6 +1,6 @@
 {
   "name": "delta-e",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "CIE color difference algorithms in JavaScript.",
   "private": false,
   "main": "./src/index.js",
