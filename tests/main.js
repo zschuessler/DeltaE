@@ -1,9 +1,6 @@
 var assert = require('assert');
-var DeltaE_GlobalClass = require('../dist/deltae.global.min');
-var DeltaE_CommonJSClass = require('../src/index');
-
-var DeltaE_Global = new DeltaE_GlobalClass();
-var DeltaE_CommonJS = new DeltaE_CommonJSClass();
+var DeltaE_Global = require('../dist/deltae.global.min');
+var DeltaE_CommonJS = require('../src/index');
 
 
 /**

@@ -96,5 +96,5 @@ DeltaE.prototype.getDeltaE00 = function(lab1, lab2) {
 };
 
 if (module && module.exports) {
-    module.exports = DeltaE;
+    module.exports = new DeltaE;
 }
