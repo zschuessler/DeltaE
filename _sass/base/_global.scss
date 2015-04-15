@@ -249,3 +249,9 @@ figure img {
 .tab-content:first-of-type {
     display: block;
 }
+
+#video, #canvas-1 {
+    width: 360px;
+    height: 203px;
+    max-width: 100%;
+}
