@@ -208,17 +208,25 @@ permalink: /demos/
      * would do. A poor choice if you require every frame to be processed, but
      * perfect for our use case.
      * 
-     * 2. Uint32Array - a 32-bit array that drastically cuts down on pixel array
-     * size. Array processing in frontend JavaScript is incredibly costly. We use
-     * this in favor of the typical clamped 8 bit array, which is much larger. Using
-     * Uint32Array also gives us the ability to make shifts in binary to get RGB
-     * values.
+     * 2. Uint32Array - an array that houses 32-bit integers. Array processing in frontend 
+     * JavaScript is incredibly costly. We use this in favor of the typical clamped 
+     * 8 bit array, which is much larger. Using Uint32Array also gives us the ability
+     *  to make shifts in binary to get RGB values. Easy peasy.
      * 
      * 3. For testing the three green values, I wanted to exit as early as possible.
      * Here it was logical to find the most abundant type of green, so we can
-     * exit early if we find it first. So in order we checked for light, medium,
+     * exit early if we find it first. So in order: we checked for light, medium,
      * then dark greens. So while the three checks would ruin our operation normally,
      * all three aren't called in the majority of cases.
+     * 
+     * 4. Most importantly, the size of the canvas is at play here. More pixels,
+     * Mo' problems, my gramma always said. You could increase the canvas by a factor
+     * of even 20% and get noticeable jitter on desktop.
+     * 
+     * Extra fun tidbit: we could use even dE00 in real time if we had access
+     * to the GPU. This business is running on your processor - and that sucks.
+     * If this was ported to OpenGL shaders, it would run smooth as butter. Oh
+     * well. We love you still, Canvas.
      */
     function computeFrame() {
         requestAnimationFrame(computeFrame);
