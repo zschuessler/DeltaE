@@ -109,7 +109,7 @@ permalink: /demos/
         Z = _r * 0.0193 + _g * 0.1192 + _b * 0.9505;
 
         return [X, Y, Z];
-    };
+    }
     function xyzToLab(x, y, z) {
         var ref_X = 95.047;
         var ref_Y = 100.000;
@@ -145,7 +145,7 @@ permalink: /demos/
         var CIE_b = 200 * (_Y - _Z);
 
         return [CIE_L, CIE_a, CIE_b];
-    };
+    }
 
     /**
      * Video events
