@@ -1,6 +1,16 @@
 
-@media (max-width: 900px) {
-    h1 {
-        font-size: 16px;
-    }
+
+/* Desktop/Tablet */
+@media only screen and (min-width: 768px) {
+    
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    
+}
+
+/* Even more mobile ----------- */
+@media only screen and (min-width : 321px) {
+
 }
