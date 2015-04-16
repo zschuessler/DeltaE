@@ -4,7 +4,7 @@
   display: inline-block;
   width: 100%;
   background: none repeat scroll 0% 0% $header-desc-background-color;
-  font-size: 1.2em;
+  font-size: 25px;
   text-align: center;
   color: $header-desc-text-color;
 }
@@ -42,4 +42,10 @@
 
 .title {
     text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+   .call-out {
+       font-size: 22px;
+   }
 }
