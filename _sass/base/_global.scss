@@ -263,9 +263,15 @@ figure img {
     display: block;
 }
 
+#video {
+    background: #000;
+}
+
+#canvas-1 {
+    background: rgb(211, 211, 183);
+}
+
 #video, #canvas-1 {
-    width: 360px;
-    height: 203px;
     max-width: 100%;
 }
 
@@ -292,4 +298,16 @@ figure img {
 
 .post-content {
     overflow: hidden;
+}
+
+.demo-caption {
+    font-size: 13px;
+    font-style: italic;
+    text-align: center;
+    margin: 5px 0;
+    max-width: 600px;
+}
+
+.post-content ol > li {
+    padding: 7px;
 }
