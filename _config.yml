@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "http://deltae-ghpages.local/" # the subpath of your site, e.g. /blog/
+baseurl: "/DeltaE" # the subpath of your site, e.g. /blog/
 #url: "http://example.com" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
