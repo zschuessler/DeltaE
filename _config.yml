@@ -1,5 +1,5 @@
 # SITE CONFIGURATION
-baseurl: "/DeltaE" # the subpath of your site, e.g. /blog/
+baseurl: "http://deltae-ghpages.local/" # the subpath of your site, e.g. /blog/
 #url: "http://example.com" # the base hostname & protocol for your site
 
 # THEME-SPECIFIC CONFIGURATION
@@ -8,7 +8,7 @@ theme:
   title: Delta E | Color Difference Algorithms
   avatar: avatar.png
   gravatar: af58fb1f59364d9622f05c6aeb18a4e4
-  description: "A website with blog posts and pages" 
+  description: "A website with blog posts and pages"
 
   # Header and footer text
   header_text: ""

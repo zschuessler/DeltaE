@@ -1,7 +1,13 @@
 <script src="{{ "/js/main.js" | prepend: site.baseurl }}"></script>
 
-{% if site.theme.footer_text %}
+
 <footer class="site-footer">
-	<p class="text">{{ site.theme.footer_text }}</p>
+    <p class="text">
+        This project is public domain. All content, demos, and code developed
+        as a passion project of <a href="https://github.com/zschuessler" title="Zachary Schuessler Github">Zachary Schuessler</a>
+    </p>
+    <div class="github-avatar">
+        <img src="{{ "/img/github-avatar.jpg" | prepend: site.baseurl }}"/>
+    </div>
 </footer>
-{% endif %}
+

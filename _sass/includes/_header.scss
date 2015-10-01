@@ -1,69 +1,68 @@
 .site-header {
-  @extend %padding-small;
-  background: $brand-color;
-  border-bottom: 1px solid $border-color;
-  display: inline-block;
-  float: left;
-  width: 100%;
-  position: fixed;
-  padding: 10px;
-  z-index: 10;
-  
-  @media (max-width: 650px) {
-      position: relative;
-      font-size: 15px;
-  }
-
-  a {
-    color: $header-link-color;
-  }
-
-  .avatar {
-    height: 2em;
-    width: 2em;
+    @extend %padding-small;
+    background: $brand-color;
+    border-bottom: 1px solid $border-color;
+    display: inline-block;
     float: left;
-    margin-top: -3px;
-    border-radius: 0.2em;
-    margin-right: 1em;
-  }
+    width: 100%;
+    position: fixed;
+    padding: 10px;
+    z-index: 10;
 
-  .site-title {
-    float: left;
-    font-weight: bold;
-    font-size: 1em;
-    line-height: 1.5;
-  }
-
-  .site-nav {
-    ul {
-      margin: 0;
-      padding: 0;
-      list-style: none;
-      line-height: 1.5;
-      float: right;
-      text-align: right;
+    @media (max-width: 650px) {
+        position: relative;
+        font-size: 15px;
     }
-    li {
-      display: inline;
-      float: left;
-      margin-right: 0.4em;
-      border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 5px;
-    
-        a {
-            color: #6B6B6B;
+
+    a {
+        color: $header-link-color;
+    }
+
+    .avatar {
+        height: 2em;
+        width: 2em;
+        float: left;
+        margin-top: -3px;
+        border-radius: 0.2em;
+        margin-right: 1em;
+    }
+
+    .site-title {
+        float: left;
+        font-weight: bold;
+        font-size: 1em;
+        line-height: 1.5;
+    }
+
+    .site-nav {
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            line-height: 1.5;
+            float: right;
+            text-align: right;
+        }
+        li {
+            display: inline;
+            float: left;
+            margin-right: 0.4em;
+            border-radius: 5px;
+            padding: 5px;
+
+            a {
+                color: #6B6B6B;
+            }
+        }
+
+        @media (max-width: 650px) {
+            ul {
+                display: inline-block;
+                float: left;
+                padding-top: $padding-small;
+                text-align: left;
+                width: 100%;
+            }
         }
     }
-    
-    @media (max-width: 650px) {
-      ul {
-        display: inline-block;
-        float: left;
-        padding-top: $padding-small;
-        text-align: left;
-        width: 100%;
-      }
-    }
-  }
 }

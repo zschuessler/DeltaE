@@ -139,7 +139,7 @@ figure img {
     padding: 7px;
     color: #fff;
     background: #F98752;
-    
+
     @media (max-width: 650px) {
         font-size: 14px;
     }
@@ -156,7 +156,7 @@ figure img {
     padding: 7px;
     color: #fff;
     background: #F98752;
-    
+
     @media (max-width: 650px) {
         font-size: 14px;
     }
@@ -237,7 +237,7 @@ figure img {
     padding: 10px;
     text-transform: uppercase;
     color: #fff;
-    text-decoration: none; 
+    text-decoration: none;
 }
 
 .tabs-menu .current a {
@@ -251,6 +251,7 @@ figure img {
     margin-bottom: 20px;
     width: auto;
     max-width: 100%;
+    clear: both;
 }
 
 .tab-content {
@@ -290,6 +291,9 @@ figure img {
     h1 {
         font-size: 25px;
     }
+    footer.site-footer {
+        padding: 5px;
+    }
 }
 
 .post-content {
@@ -306,4 +310,35 @@ figure img {
 
 .post-content ol > li {
     padding: 7px;
+}
+
+.github-avatar {
+    float: left;
+    margin-left: 15px;
+}
+
+.github-avatar > img {
+    width: 90px;
+    border-radius: 7px;
+    float: left;
+    margin: 0;
+    opacity: 0.8;
+    box-shadow: 2px 2px 2px #ccc;
+    border: 1px solid rgb(242, 242, 242);
+}
+
+.site-footer p.text {
+    float: left;
+    width: 70%;
+    padding: 7px 0;
+    border-top: 1px solid #ccc;
+}
+
+.site-footer {
+    background: #F2F2F2;
+}
+
+.site-header .site-nav li.nav-active a {
+    text-decoration: underline;
+    color: rgb(173, 118, 93);
 }
