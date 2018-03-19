@@ -94,11 +94,3 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 >
 > For more information, please refer to <http://unlicense.org>
-
-
-
-## Show Appreciation
-
-Donations welcome through [SquareBit](https://squarebit.io):
-
-[<img src="https://squarebit.io/zschuessler/donate/delta-e/embed/simple.png">](https://squarebit.io/zschuessler/donate/delta-e)
