@@ -4,6 +4,7 @@
   "description": "CIE color difference algorithms in JavaScript.",
   "private": false,
   "main": "./src/index.js",
+  "types": "./index.d.ts",
   "keywords": [
     "cie",
     "cie94",
