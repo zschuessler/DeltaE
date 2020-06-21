@@ -21,6 +21,19 @@ const color2 = {
   B: 77,
 };
 
+const floatingPointColor1 = {
+  L: 53.23288178584245,
+  A: 80.10930952982204,
+  B: 67.22006831026425
+};
+
+const floatingPointColor2 = {
+  L: 50.9588099835815,
+  A: 77.47798295202801,
+  B: 65.01211079141827
+};
+
+
 function round(n) {
   return Math.round(n * 10000) / 10000;
 }
@@ -73,6 +86,16 @@ describe('deltaE', () => {
       assert.equal(resultGlobal, correctDeltaE);
       done();
     });
+
+    it('Handles Floating Point Error', (done) => {
+      const resultGlobal = DeltaE_Global.getDeltaE94(floatingPointColor1, floatingPointColor2);
+      const resultCommonJS = DeltaE_CommonJS.getDeltaE94(floatingPointColor1, floatingPointColor2);
+      const correctDeltaE = 2.3524048718867823;
+
+      assert.equal(resultCommonJS, correctDeltaE);
+      assert.equal(resultGlobal, correctDeltaE);
+      done();
+    })
   });
 
   /**
@@ -85,7 +108,7 @@ describe('deltaE', () => {
     it('Return DeltaE', (done) => {
       const resultGlobal = DeltaE_Global.getDeltaE00(color1, color2);
       const resultCommonJS = DeltaE_CommonJS.getDeltaE00(color1, color2);
-      const correctDeltaE = 22.394506952417895;
+      const correctDeltaE = 22.3945069524179;
 
       assert.equal(resultCommonJS, correctDeltaE);
       assert.equal(resultGlobal, correctDeltaE);
@@ -103,19 +126,6 @@ describe('deltaE', () => {
     });
     it('100.0 difference', () => {
       assertDeltaE00(100.0, [100, 0.005, -0.010], [0.0, 0.0, 0.0]);
-    });
-    it('Error', () => {
-      assert.throws(
-        () => {
-          DeltaE_Global.getDeltaE00([NaN,
-            NaN,
-            NaN,
-          ], [0,
-            0,
-            0,
-          ]);
-        },
-        Error);
     });
     it('True chroma difference (#1)', () => {
       assertDeltaE00(2.0425, [50.0000,

@@ -112,7 +112,7 @@ dE94.prototype.calculateB = function(x1, x2) {
         pow(a, 2) +
         pow(b, 2) -
         pow(cab, 2)
-    );
+    ) || 0;
     
     // bottom
     var c1 = sqrt(pow(x1.A, 2) + pow(x1.B, 2));
